@@ -265,22 +265,22 @@ section.block{padding:96px 0;position:relative}
 .contact-card{
   position:relative;overflow:hidden;border-radius:var(--r-lg);
   background:linear-gradient(135deg,var(--teal-900),var(--teal-700));
-  color:#fff;padding:64px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;
+  color:#fff;padding:58px;display:flex;flex-direction:column;align-items:center;text-align:center;
   box-shadow:var(--shadow-md);
 }
-.contact-card::before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(127,179,170,.35),transparent 70%);top:-120px;right:-80px}
+.contact-card::before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(127,179,170,.35),transparent 70%);top:-140px;right:-60px}
 .contact-card h2{color:#fff;font-size:clamp(1.9rem,3.4vw,2.6rem);position:relative}
-.contact-card p.lead{color:#cfe0db;margin-top:14px;font-size:1.08rem;position:relative;max-width:42ch}
-.contact-actions{display:flex;gap:14px;margin-top:30px;position:relative;flex-wrap:wrap}
+.contact-card p.lead{color:#cfe0db;margin:14px auto 0;font-size:1.08rem;position:relative;max-width:48ch}
+.contact-actions{display:flex;gap:14px;margin-top:30px;position:relative;flex-wrap:wrap;justify-content:center}
 .btn-on-dark{background:#fff;color:var(--teal-900)}
 .btn-on-dark:hover{background:var(--sand-100);transform:translateY(-2px)}
 .btn-outline-dark{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
 .btn-outline-dark:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
-.contact-info{position:relative;display:flex;flex-direction:column;gap:18px}
-.cinfo{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);padding:18px 20px}
-.cinfo .ic{flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.12);display:grid;place-items:center;color:#fff}
-.cinfo small{display:block;color:#aeccc6;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:3px}
-.cinfo strong{font-size:1.05rem;color:#fff;font-weight:600}
+.contact-info{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 40px;margin-top:38px;padding-top:32px;border-top:1px solid rgba(255,255,255,.14);width:100%}
+.cinfo{display:flex;gap:12px;align-items:center;text-align:left}
+.cinfo .ic{flex:0 0 40px;width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.12);display:grid;place-items:center;color:#fff}
+.cinfo small{display:block;color:#aeccc6;font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px}
+.cinfo strong{font-size:1rem;color:#fff;font-weight:600}
 
 /* ============ FOOTER ============ */
 footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
@@ -659,25 +659,19 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="contact-card reveal">
-      <div>
-        <h2>Hai să facem primul pas împreună</h2>
-        <p class="lead">Programează o ședință sau scrie-mi pentru orice întrebare. Îți răspund în cel mai scurt timp.</p>
-        <div class="contact-actions">
-          <a href="tel:0744555973" class="btn btn-on-dark">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Sună: 0744.555.973
-          </a>
-          <a href="#" class="btn btn-outline-dark">Scrie un e-mail</a>
-        </div>
+      <h2>Hai să facem primul pas împreună</h2>
+      <p class="lead">Programează o ședință sau scrie-mi pentru orice întrebare. Îți răspund în cel mai scurt timp.</p>
+      <div class="contact-actions">
+        <a href="tel:0744555973" class="btn btn-on-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Sună: 0744.555.973
+        </a>
+        <a href="#" class="btn btn-outline-dark">Scrie un e-mail</a>
       </div>
       <div class="contact-info">
         <div class="cinfo">
           <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
           <div><small>Cabinet</small><strong>Str. Roma, Sector 1, București</strong></div>
-        </div>
-        <div class="cinfo">
-          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-          <div><small>Programări</small><strong>0744.555.973</strong></div>
         </div>
         <div class="cinfo">
           <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 8 9 6 9-6"/></svg></span>
