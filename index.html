@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Bogdan Georgescu · Psihoterapie psihanalitică | București</title>
-<meta name="description" content="Cabinet de psihoterapie psihanalitică, psiholog cu drept de liberă practică. Ședințe individuale cu adulți, în cabinet (Str. Roma, Sector 1, București) sau online.">
+<meta name="description" content="Cabinet de psihoterapie psihanalitică, psiholog cu drept de liberă practică. Ședințe individuale cu adulți, în cabinet (Str. Roma nr. 16, Sector 1, București) sau online.">
 <meta name="theme-color" content="#143b38">
 <link rel="icon" type="image/png" href="images/logo-mark.png">
 <link rel="apple-touch-icon" href="images/logo-mark.png">
@@ -62,6 +62,7 @@ body{
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
+  font-variant-ligatures:none;
 }
 h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;color:var(--ink-900);font-weight:500;line-height:1.15;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
@@ -69,6 +70,7 @@ img{max-width:100%;display:block}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--teal-500);outline-offset:3px;border-radius:5px}
 .skip{position:absolute;left:8px;top:-60px;z-index:100;background:var(--teal-900);color:#fff;padding:12px 20px;border-radius:0 0 12px 12px;font-weight:600;transition:top .2s var(--ease)}
 .skip:focus{top:0}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal-500),var(--clay-500));z-index:60;transition:width .12s linear}
 .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
 .eyebrow{
   font-family:'Hanken Grotesk';font-size:.78rem;font-weight:600;letter-spacing:.18em;
@@ -119,7 +121,7 @@ header.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 20px rgba(2
 .burger span{width:18px;height:2px;background:var(--ink-900);border-radius:2px;transition:.3s}
 
 /* ============ HERO ============ */
-.hero{position:relative;padding:72px 0 90px;overflow:hidden}
+.hero{position:relative;padding:24px 0 40px;overflow:hidden;min-height:calc(100svh - 74px);display:flex;align-items:center}
 .hero::before{
   content:"";position:absolute;inset:0;z-index:0;
   background:
@@ -127,12 +129,12 @@ header.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 20px rgba(2
     radial-gradient(50% 70% at 5% 90%,rgba(217,169,131,.18),transparent 60%);
 }
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
-.hero h1{font-size:clamp(2.5rem,5.2vw,4rem);margin:6px 0 22px}
+.hero h1{font-size:clamp(2.2rem,4.4vw,3.4rem);margin:4px 0 16px}
 .hero h1 em{font-style:italic;color:var(--teal-700)}
 .hero .hero-desc{font-size:1.06rem;color:var(--ink-700);font-weight:500;margin:0 0 16px;max-width:36ch}
-.hero .lead{font-size:1.18rem;color:var(--ink-500);max-width:30ch;margin-bottom:34px}
+.hero .lead{font-size:1.12rem;color:var(--ink-500);max-width:32ch;margin-bottom:26px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.hero-meta{display:flex;gap:28px;margin-top:38px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap}
 .hero-meta .item{display:flex;flex-direction:column}
 .hero-meta .k{font-family:'Fraunces';font-size:1.5rem;color:var(--teal-700);font-weight:600}
 .hero-meta .v{font-size:.86rem;color:var(--ink-500)}
@@ -367,7 +369,7 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
 }
 
 /* ============ SIGNATURE (editorial spread) ============ */
-.signature{padding:130px 0;background:var(--sand-50);text-align:center;position:relative}
+.signature{padding:96px 0;background:var(--sand-50);text-align:center;position:relative}
 .signature::before{content:"";display:block;width:1px;height:56px;background:var(--clay-500);margin:0 auto 42px;opacity:.55}
 .signature .num{font-family:'Fraunces';font-size:.95rem;letter-spacing:.2em;color:var(--clay-500);text-transform:uppercase;margin-bottom:30px;display:inline-block}
 .sig-quote{font-family:'Fraunces';font-weight:400;font-size:clamp(2rem,4.8vw,3.5rem);line-height:1.2;color:var(--ink-900);max-width:17ch;margin:0 auto;letter-spacing:-.015em}
@@ -427,6 +429,7 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
 <body>
 
 <a href="#despre" class="skip">Sari la conținut</a>
+<div class="progress" id="progress"></div>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
@@ -460,9 +463,9 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
   <div class="wrap hero-grid">
     <div class="reveal">
       <span class="eyebrow">Psihoterapie psihanalitică · București</span>
-      <h1>Renunță să mai trăiești <em>trecutul</em> în prezent.</h1>
+      <h1>Trăiește prezentul în prezent și devino <em>autorul</em> propriei vieți.</h1>
       <p class="hero-desc">Psihoterapie psihanalitică pentru adulți, în cabinet, în București, și online.</p>
-      <p class="lead">Un spațiu sigur în care „personajul” descoperă cine este și devine autorul propriei povești de viață.</p>
+      <p class="lead">Un spațiu sigur în care „personajul” descoperă cine este cu adevărat.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">
           Programează o ședință
@@ -498,7 +501,7 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
     </div>
     <div class="about-grid">
       <div class="prose reveal">
-        <p><span class="hl">„Cine este cineva?”</span> Ne naștem, ne formăm și trăim normativ într-o lume care își lasă profund amprenta asupra vieților noastre, prin obișnuințe, standarde, cerințe, generalizări, judecăți de valoare, prejudecăți profane și derive comportamentale. Astfel, dificultățile subiective psiho-emoționale, comportamentale și relaționale sunt întotdeauna forme de exprimare a unei anumite configurații personale: „cine este cineva” spre deosebire de „ce are cineva”.</p>
+        <p><span class="hl">„Cine este cineva?”</span> Ne naștem, ne formăm și trăim normativ într-o lume care își lasă profund amprenta asupra vieților noastre, prin obișnuințe, standarde, cerințe, generalizări, judecăți de valoare, prejudecăți profane și derive comportamentale. Astfel, dificultățile subiective psiho-emoționale, comportamentale și relaționale sunt întotdeauna forme de exprimare a unei anumite configurații personale: „cine este cineva” (persoana cu istoria sa de viață) versus „ce are cineva” (diagnosticul).</p>
 
         <div class="pullcard">
           <p>„Personaj” versus „Autor”. Deosebirea dintre cei care se lasă trăiți de dificultățile vieții cotidiene și cei care aleg travaliul provocator al psihoterapiei este diferența dintre a fi un personaj într-o piesă scrisă de altcineva și a fi autorul care își scrie propria poveste de viață.</p>
@@ -524,13 +527,13 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
 </section>
 
 <!-- ============ PSIHOTERAPIA ============ -->
-<section class="block dark" id="psihoterapia" style="background-image:linear-gradient(rgba(15,42,40,.9),rgba(15,42,40,.94)),url('images/drum.jpg');background-size:cover;background-position:center">
+<section class="block dark" id="psihoterapia" style="background-image:linear-gradient(rgba(31,91,84,.70),rgba(20,59,56,.84)),url('images/drum.jpg');background-size:cover;background-position:center">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Psihoterapia</span>
       <h2>O aventură personală către o transformare imaginată</h2>
       <p class="prose-intro">…al cărei final se conturează abia pe parcurs, susținută de motivația pentru o stare de mai bine, în relația cu sine și în relațiile cu ceilalți.</p>
-      <p style="margin-top:24px;max-width:66ch;color:#cdded9;font-size:1.04rem">Psihoterapia psihanalitică propune o reconfigurare realistă a tiparelor de trăire și de relaționare cu sine și cu ceilalți, prin explorarea distorsiunilor inconștiente inerente circumstanțelor de viață. Relația terapeutică devine partenerul de călătorie care menține echilibrul ambarcațiunii pe care tu, navigatorul, o conduci.</p>
+      <p style="margin-top:24px;max-width:66ch;color:#cdded9;font-size:1.04rem">Psihoterapia psihanalitică propune o reconfigurare realistă a tiparelor de trăire și de relaționare cu sine și cu ceilalți, prin explorarea distorsiunilor inconștiente inerente circumstanțelor de viață. Psihoterapeutul este partenerul de călătorie care menține echilibrul ambarcațiunii pe care tu, navigatorul, o conduci.</p>
     </div>
 
     <div class="journey">
@@ -547,7 +550,7 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
         <div class="ic">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="m15 9-3.5 5.5L9 12l3.5-5.5L15 9z"/></svg>
         </div>
-        <h4>Psihanaliza</h4>
+        <h4>Psihoterapia psihanalitică</h4>
         <p>O formă de psihoterapie psihodinamică ce explorează procesele inconștiente, partea internă care, în moduri imperceptibile, modelează percepția trecutului și trăirea prezentului.</p>
       </div>
       <div class="jcard reveal">
@@ -634,7 +637,7 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
       <div class="step reveal">
         <span class="n">01</span>
         <h4>Primul contact</h4>
-        <p>Mă suni sau îmi scrii. Stabilim împreună un prim moment în care să ne vedem, în cabinet sau online.</p>
+        <p>Mă suni și stabilim împreună un prim moment în care să ne vedem, în cabinet sau online.</p>
       </div>
       <div class="step reveal">
         <span class="n">02</span>
@@ -649,7 +652,7 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
       <div class="step reveal">
         <span class="n">04</span>
         <h4>Procesul terapeutic</h4>
-        <p>Începe aventura: explorăm, înțelegem și reconfigurăm, în propriul tău ritm. <span class="todo">[detalii de confirmat]</span></p>
+        <p>Începe aventura: explorăm, înțelegem și reconfigurăm, în propriul tău ritm.</p>
       </div>
     </div>
   </div>
@@ -660,32 +663,27 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
   <div class="wrap">
     <div class="contact-card reveal">
       <h2>Hai să facem primul pas împreună</h2>
-      <p class="lead">Programează o ședință sau scrie-mi pentru orice întrebare. Îți răspund în cel mai scurt timp.</p>
+      <p class="lead">Sună și programează o ședință.</p>
       <div class="contact-actions">
         <a href="tel:0744555973" class="btn btn-on-dark">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Sună: 0744.555.973
         </a>
-        <a href="#" class="btn btn-outline-dark">Scrie un e-mail</a>
+        <a href="https://wa.me/40744555973" target="_blank" rel="noopener" class="btn btn-outline-dark">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.2-.1-1.5-.700-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A3 3 0 0 0 6.4 9c0 1.6 1.2 3.2 1.3 3.4.2.2 2.3 3.5 5.5 4.8 2 .8 2.5.7 3 .6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+          Scrie pe WhatsApp
+        </a>
       </div>
       <div class="contact-info">
         <div class="cinfo">
           <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <div><small>Cabinet</small><strong>Str. Roma, Sector 1, București</strong></div>
-        </div>
-        <div class="cinfo">
-          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 8 9 6 9-6"/></svg></span>
-          <div><small>E-mail</small><strong><span class="todo">[adresă e-mail: de completat]</span></strong></div>
-        </div>
-        <div class="cinfo">
-          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
-          <div><small>Program</small><strong><span class="todo">[program: de confirmat]</span></strong></div>
+          <div><small>Cabinet</small><strong>Str. Roma nr. 16, Sector 1, București</strong></div>
         </div>
       </div>
       <div class="map-ph reveal">
         <div class="ph"><div class="ph-in">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Hartă Google cu locația cabinetului<br>(de integrat după confirmarea adresei exacte)</span>
+          <span>Str. Roma nr. 16, Sector 1, București<br>(hartă Google de integrat)</span>
         </div></div>
       </div>
     </div>
@@ -710,11 +708,11 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
       </details>
       <details>
         <summary>Ședințele online sunt la fel de eficiente? <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-        <div class="ans"><span class="todo">[răspuns de confirmat cu terapeutul]</span></div>
+        <div class="ans">În perioada actuală, cu precădere după constrângerile, provocările și noile obișnuințe determinate de pandemia de COVID-19, ședințele desfășurate în mediul online au devenit o realitate din ce în ce mai des accesată inclusiv în domeniul psihoterapiei. Eficiența este raportul dintre rezultatele obținute și eforturile depuse, astfel că raportul de eficiență dintre ședințele online și cele cu prezență fizică ar trebui să fie sensibil egal, în sensul în care diferența de efort se reflectă în diferența dintre rezultate. Diferența comparativă dintre cele două tipuri de desfășurare a ședințelor este corespunzătoare diferenței dintre a trăi experiența relației cu o altă persoană în prezența acesteia și a trăi experiența relației în mediul virtual, din care lipsesc părți semnificative ale experienței trăite în prezența fizică a celeilalte persoane. Spre exemplu, eficiența poate fi privită în termenii diferenței multi-stratificate dintre a participa la o petrecere cu prezență fizică și a participa la o petrecere online.</div>
       </details>
       <details>
         <summary>Cum mă programez? <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-        <div class="ans">Telefonic, la 0744.555.973 <span class="todo">[+ e-mail, de completat]</span>.</div>
+        <div class="ans">Telefonic sau pe WhatsApp, la 0744.555.973.</div>
       </details>
       <details>
         <summary>Cu ce dificultăți pot veni? <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span></summary>
@@ -722,11 +720,7 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
       </details>
       <details>
         <summary>Este totul confidențial? <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-        <div class="ans">Da. <span class="todo">[text despre confidențialitate și cadrul etic: de confirmat]</span></div>
-      </details>
-      <details>
-        <summary>Care este politica de anulare / reprogramare? <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-        <div class="ans"><span class="todo">[de stabilit: cu cât timp înainte se poate anula sau reprograma o ședință]</span></div>
+        <div class="ans">Confidențialitatea este unul dintre reperele fundamentale fără de care nu poate exista o relație psihoterapeutică și care îl obligă pe terapeut să protejeze confidențialitatea tuturor informațiilor la care are acces în timpul desfășurării activității sale. Excepțiile de la obligația de confidențialitate sunt impuse de lege și de situații precum: protecția sănătății publice, prevenirea unui pericol iminent, punerea în pericol a vieții sau sănătății propriei persoane sau a unei alte persoane.</div>
       </details>
     </div>
   </div>
@@ -782,12 +776,6 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
           <span class="ft-name">Bogdan Georgescu<small>Psihoterapie psihanalitică</small></span>
         </a>
         <p class="ft-desc">Psiholog cu drept de liberă practică. Ședințe în cabinet, în București, și online.</p>
-        <div class="socials">
-          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2 0-2.3 1.57-2.3 3.2V21h-4z"/></svg></a>
-          <span class="todo" style="align-self:center">[rețele: de completat]</span>
-        </div>
       </div>
       <div class="ft-col">
         <h5>Navigare</h5>
@@ -799,8 +787,8 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
       <div class="ft-col">
         <h5>Contact</h5>
         <a href="tel:0744555973">0744.555.973</a>
-        <a href="#contact">Str. Roma, Sector 1, București</a>
-        <a href="#"><span class="todo">[e-mail: de completat]</span></a>
+        <a href="https://wa.me/40744555973" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#contact">Str. Roma nr. 16, Sector 1, București</a>
       </div>
     </div>
     <div class="ft-bottom">
@@ -822,9 +810,14 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
 // year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// nav shadow on scroll
+// nav shadow + scroll progress
 const nav = document.getElementById('nav');
-addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10));
+const prog = document.getElementById('progress');
+addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', scrollY > 10);
+  const h = document.documentElement.scrollHeight - innerHeight;
+  prog.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
 
 // mobile menu
 const burger = document.getElementById('burger');
