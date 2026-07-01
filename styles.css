@@ -421,3 +421,9 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
   .article-body ol>li{padding:20px 20px 20px 60px}
   .article-cta{padding:32px 22px}
 }
+
+/* single article (text-only, centered; devine carusel cand apar mai multe) */
+.blog-grid.solo{grid-template-columns:minmax(0,560px);justify-content:center}
+.post-text .body{padding:34px 32px 36px}
+.tag-inline{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-700);margin-bottom:14px}
+.post-text h4{font-size:1.3rem}
