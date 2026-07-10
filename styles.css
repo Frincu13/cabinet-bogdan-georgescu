@@ -431,3 +431,7 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
 /* map link (deschide in Google Maps) */
 .map-link{display:inline-flex;align-items:center;gap:7px;margin-top:16px;color:var(--teal-300);font-weight:600;font-size:.92rem;position:relative;transition:.2s}
 .map-link:hover{color:#fff}
+
+/* article/legal unordered list */
+.article-body ul{margin:0 0 20px;padding-left:20px}
+.article-body ul>li{margin-bottom:9px;font-size:1.05rem;line-height:1.8;color:var(--ink-700)}
