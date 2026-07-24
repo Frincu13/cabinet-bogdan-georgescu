@@ -435,3 +435,7 @@ footer.ft{background:var(--ink-900);color:#9fb1ab;padding:60px 0 26px}
 /* article/legal unordered list */
 .article-body ul{margin:0 0 20px;padding-left:20px}
 .article-body ul>li{margin-bottom:9px;font-size:1.05rem;line-height:1.8;color:var(--ink-700)}
+
+/* footer full logo card (lockup pe fundal deschis, ca sa se vada pe footer-ul inchis) */
+.ft-logo-card{display:inline-block;background:var(--sand-50);border-radius:16px;padding:20px 24px;box-shadow:var(--shadow-sm)}
+.ft-logo-card img{width:172px;max-width:100%;display:block}
