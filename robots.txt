@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://frincu13.github.io/cabinet-bogdan-georgescu/sitemap.xml
